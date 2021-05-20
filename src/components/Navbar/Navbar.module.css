@@ -1,0 +1,7 @@
+.nav {
+  grid-area: n;
+  background-color: rgb(86, 255, 86);
+}
+.item {
+color: cornsilk;
+}
