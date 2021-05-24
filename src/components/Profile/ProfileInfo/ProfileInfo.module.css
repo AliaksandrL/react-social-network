@@ -1,0 +1,13 @@
+.content {
+  grid-area: c;
+  background-color: cornflowerblue;
+}
+
+.first img {
+  height: 100px;
+  width: 50%;
+}
+
+.descriptionBlock {
+  padding: 10px;
+}
