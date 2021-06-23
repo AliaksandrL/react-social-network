@@ -1,6 +1,4 @@
-// import logo from "./logo.svg";
 import { Route } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Dialogs from "./components/Dialogs/Dialogs";
 import Header from "./components/Header/Header";
@@ -20,7 +18,7 @@ const App = (props) => {
         />
         <Route
           path="/dialogs"
-          render={() => <Dialogs state={props.state.messagesPage} />}
+          render={() => <Dialogs store={props.store} />}
         />
         <Route path="/news" render={() => <News />} />
       </div>
