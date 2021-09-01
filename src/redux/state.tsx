@@ -2,7 +2,43 @@ import {profileReducer} from "./profile-reducer";
 import {dialogsReducer} from "./dialogs-reducer";
 import {sidebarReducer} from "./sidebar-reducer";
 
-let store = {
+type MessageType = {
+    id: number
+    message: string
+}
+type DialogType = {
+    id: number
+    name: string
+}
+type PostType = {
+    id: number
+    message: string
+    likesCount: number
+}
+type ProfilePageType = {
+    posts: Array<PostType>
+    newPostText: string
+}
+type MessagesPageType = {
+    dialogs: Array<DialogType>
+    messages: Array<MessageType>
+    newMessageBody: string
+}
+type SidebarType = {}
+type RootStateType = {
+    profilePage: ProfilePageType
+    messagesPage: MessagesPageType
+    sidebar: SidebarType
+}
+type RootStoreType = {
+    _state: RootStateType
+    _callSubscriber: () => void
+    getState: () => void
+    subscribe: (observer: any) => void
+    dispatch: (action: any) => void
+}
+
+let store: RootStoreType = {
     _state: {
         profilePage: {
             posts: [
