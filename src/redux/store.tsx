@@ -33,7 +33,7 @@ type RootStateType = {
 type RootStoreType = {
     _state: RootStateType
     _callSubscriber: () => void
-    getState: () => void
+    getState: () => RootStateType
     subscribe: (observer: any) => void
     dispatch: (action: any) => void
 }
@@ -82,9 +82,10 @@ let store: RootStoreType = {
         this._state.messagesPage = dialogsReducer(this._state.messagesPage, action);
         this._state.sidebar = sidebarReducer(this._state.sidebar, action);
 
-        this._callSubscriber(this._state);
+        this._callSubscriber();
     }
 }
 
 export default store;
+// @ts-ignore
 window.state = store;

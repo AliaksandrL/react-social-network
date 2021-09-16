@@ -1,4 +1,4 @@
-import store from "./redux/state";
+import store from "./redux/redux-store";
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
@@ -11,15 +11,18 @@ type state = {
     renderEntireTree: any
 }
 
-let renderEntireTree = (props: state) => {
+let renderEntireTree = () => {
     ReactDOM.render(
         <BrowserRouter>
-            <App state={props.state} dispatch={store.dispatch.bind(store)} store={store} />
+            <App state={store.getState()} dispatch={store.dispatch.bind(store)} store={store} />
         </BrowserRouter>,
         document.getElementById("root")
     );
 };
 
-renderEntireTree(store.getState());
+renderEntireTree();
 
-store.subscribe(renderEntireTree);
+store.subscribe(()=> {
+    let state = store.getState();
+    renderEntireTree();
+});

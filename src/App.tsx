@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import News from "./components/News/News";
 import Profile from "./components/Profile/Profile";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 const App = (props: any) => {
     return (
@@ -14,11 +15,11 @@ const App = (props: any) => {
             <div className="app-wrapper-content">
                 <Route
                     path="/profile"
-                    render={() => <Profile profilePage={props.state.profilePage} dispatch={props.dispatch} />}
+                    render={() => <Profile store={props.store}/>}
                 />
                 <Route
                     path="/dialogs"
-                    render={() => <Dialogs store={props.store} />}
+                    render={() => <DialogsContainer store={props.store} />}
                 />
                 <Route path="/news" render={() => <News />} />
             </div>
