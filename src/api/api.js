@@ -21,7 +21,7 @@ export const usersAPI = {
     }
 }
 
-export const getUsers2 = (currentPage = 1, pageSize = 10) => {
+export const getFollow = (currentPage = 1, pageSize = 10) => {
     return instance.get(`follow?page=${currentPage}&count=${pageSize}`,
         {
             withCredentials: true,
