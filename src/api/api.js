@@ -20,19 +20,18 @@ export const usersAPI = {
             });
     },
     follow(userId) {
-        instance.post(`https://social-network.samuraijs.com/api/1.0/follow/${userId}`)
+        instance.post(`follow/${userId}`)
     },
     unfollow(userId) {
-        return instance.delete(`https://social-network.samuraijs.com/api/1.0/follow/${userId}`)
+        return instance.delete(`follow/${userId}`)
     },
+    getProfile(userId) {
+        return instance.get(`profile/` + userId)
+    }
 }
 
-// export const getFollow = (currentPage = 1, pageSize = 10) => {
-//     return instance.get(`follow?page=${currentPage}&count=${pageSize}`,
-//         {
-//             withCredentials: true,
-//         })
-//         .then(response => {
-//             return response.data;
-//         });
-// }
+export const authAPI = {
+    me() {
+        return instance.get(`auth/me`)
+    }
+}
