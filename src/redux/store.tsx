@@ -18,6 +18,8 @@ type PostType = {
 type ProfilePageType = {
     posts: Array<PostType>
     newPostText: string
+    profile: any
+    status: string
 }
 type MessagesPageType = {
     dialogs: Array<DialogType>
@@ -46,6 +48,8 @@ let store: RootStoreType = {
                 {id: 2, message: "It's my first post", likesCount: 11},
             ],
             newPostText: "it.com",
+            profile: null,
+            status: ""
         },
         messagesPage: {
             dialogs: [
