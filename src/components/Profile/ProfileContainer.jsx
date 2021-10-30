@@ -21,10 +21,12 @@ class ProfileContainer extends React.Component {
             this.setState({
                 status: this.props.status
             });
+            console.log("componentDidUpdate")
         }
     }
 
     render() {
+        console.log("render")
         return (
             <div>
                 <Profile {...this.props}
