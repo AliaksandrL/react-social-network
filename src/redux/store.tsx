@@ -17,14 +17,14 @@ type PostType = {
 }
 type ProfilePageType = {
     posts: Array<PostType>
-    newPostText: string
+    // newPostText: string
     profile: any
     status: string
 }
 type MessagesPageType = {
     dialogs: Array<DialogType>
     messages: Array<MessageType>
-    newMessageBody: string
+    // newMessageBody: string
 }
 type SidebarType = {}
 type RootStateType = {
@@ -47,7 +47,7 @@ let store: RootStoreType = {
                 {id: 1, message: "Hi, how are you?", likesCount: 12},
                 {id: 2, message: "It's my first post", likesCount: 11},
             ],
-            newPostText: "it.com",
+            // newPostText: "it.com",
             profile: null,
             status: ""
         },
@@ -66,7 +66,7 @@ let store: RootStoreType = {
                 {id: 4, message: "No"},
                 {id: 5, message: "Yoo"},
             ],
-            newMessageBody: ""
+            // newMessageBody: ""
         },
         sidebar: {}
     },
