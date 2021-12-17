@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+import {Provider} from "react-redux";
 
 type state = {
     state: any
@@ -14,7 +15,9 @@ type state = {
 let renderEntireTree = () => {
     ReactDOM.render(
         <BrowserRouter>
-            <App state={store.getState()} dispatch={store.dispatch.bind(store)} store={store} />
+            <Provider store={store}/>
+            <App/>
+            {/*<App state={store.getState()} dispatch={store.dispatch.bind(store)} store={store} />*/}
         </BrowserRouter>,
         document.getElementById("root")
     );
