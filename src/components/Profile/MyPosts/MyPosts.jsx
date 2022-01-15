@@ -7,7 +7,7 @@ import {Textarea} from "../../common/FormsControls/FormsControls";
 
 const maxLength10 = maxLengthCreator(10);
 
-const MyPosts = (props) => {
+const MyPosts = React.memo(props => {
     let postsElements = props.posts.map((p) => (
         <Post message={p.message} likesCount={p.likesCount}/>
     ));
@@ -25,14 +25,14 @@ const MyPosts = (props) => {
             <div className={s.posts}>{postsElements}</div>
         </div>
     );
-};
+});
 
 const AddNewPostForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
                 <Field name="newPostText" component={Textarea}
-                validate={[required, maxLength10]}/>
+                       validate={[required, maxLength10]}/>
             </div>
             <div>
                 <button>Add post</button>
