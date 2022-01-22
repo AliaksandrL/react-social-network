@@ -20,10 +20,12 @@ export const usersAPI = {
             });
     },
     follow(userId) {
-        instance.post(`follow/${userId}`)
+        instance.post(`follow/${userId}`, {})
+            .then(res => res.data)
     },
     unfollow(userId) {
-        return instance.delete(`follow/${userId}`)
+        return instance.delete(`follow/${userId}`, {})
+            .then(res => res.data)
     },
     getProfile(userId) {
         console.warn('Obsolete method. Please profileAPI object.')

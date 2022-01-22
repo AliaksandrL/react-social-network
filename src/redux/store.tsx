@@ -30,7 +30,7 @@ type SidebarType = {}
 type RootStateType = {
     profilePage: ProfilePageType
     messagesPage: MessagesPageType
-    sidebar: SidebarType
+    sidebar: any
 }
 type RootStoreType = {
     _state: RootStateType
