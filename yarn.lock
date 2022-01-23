@@ -9917,7 +9917,7 @@
     "indent-string" "^4.0.0"
     "strip-indent" "^3.0.0"
 
-"redux-form@^8.3.7":
+"redux-form@^8.3.8":
   "integrity" "sha512-PzXhA0d+awIc4PkuhbDa6dCEiraMrGMyyDlYEVNX6qEyW/G2SqZXrjav5zrpXb0CCeqQSc9iqwbMtYQXbJbOAQ=="
   "resolved" "https://registry.npmjs.org/redux-form/-/redux-form-8.3.8.tgz"
   "version" "8.3.8"
