@@ -4,10 +4,13 @@ import s from './Header.module.css';
 const Header = (props: any) => {
     return (
         <header className={s.header}>
-            <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/480px-Instagram_logo_2016.svg.png"></img>
-
-            <div className={s.loginBlock}>
+            <div className={s.logoName}>
+                <p className={s.logoIT}>IT</p>
+                <p className={s.logoIN}>IN</p>
+                <p className={s.logoCubator}>CUBATOR </p>
+                <span className={s.logoKama}>I T - K A M A S U T R A . C O M</span>
+            </div>
+            <div className={s.imIn}>
                 {props.isAuth
                     ? <div>{props.login} - <button onClick={props.logout}>Log out</button> </div>
                     : <NavLink to={'/login'}>Login</NavLink>}
