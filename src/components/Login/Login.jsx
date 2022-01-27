@@ -25,7 +25,7 @@ const LoginForm = ({handleSubmit, error, captchaUrl}) => {
                     </div>
                 </p>
                 <div>
-                    <Field component={Input} validate={[required]} name={"password"} placeholder={"Password"}/>
+                    <Field component={Input} validate={[required]} name={"password"} placeholder={"Password"} />
                 </div>
                 <div className={s.checkboxText}>
                     <Field component={Input} validate={[required]} name={"rememberMe"} type={"checkbox"}/> remember me

@@ -29,7 +29,7 @@ class App extends Component<any> {
         }
 
         return (
-            <div className="app-wrapper">
+            <div className="App">
                 <HeaderContainer/>
                 <Navbar/>
                 <div className="app-wrapper-content">
