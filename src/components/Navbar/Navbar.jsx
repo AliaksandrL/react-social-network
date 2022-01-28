@@ -1,29 +1,40 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 import s from './Navbar.module.css';
+import {NavItem} from "./NavItem/NavItem";
+import IconUser from "../common/icons/IconUser";
+import IconMessages from "../common/icons/IconMessages";
+import IconNews from "../common/icons/IconNews";
+import IconSettings from "../common/icons/IconSettings";
+import IconMusic from "../common/icons/IconMusic";
+
 
 const Navbar = () => {
     return (
-        <nav className={s.navbar}>
-            <div className={s.item}>
-                <NavLink to='/profile' activeClassName={s.activeLink}>Profile</NavLink>
-            </div>
-            <div className={s.item}>
-                <NavLink to='/dialogs' activeClassName={s.activeLink}>Messages</NavLink>
-            </div>
-            <div className={s.users}>
-                <NavLink to='/users' activeClassName={s.activeLink}>Users</NavLink>
-            </div>
-            <div className={s.item}>
-                <NavLink to='/news' activeClassName={s.activeLink}>News</NavLink>
-            </div>
-            <div className={s.item}>
-                <NavLink to='/music' activeClassName={s.activeLink}>Music</NavLink>
-            </div>
-            <div className={s.item}>
-                <NavLink to='/settings' activeClassName={s.activeLink}>Settings</NavLink>
-            </div>
-        </nav>
+        <div className={s.navbar}>
+            <NavItem name={'Profile'} to={'/profile'}>
+                <IconUser fill={'white'}/>
+            </NavItem>
+            <NavItem name={'Messages'} to={'/dialogs'}>
+                <IconMessages fill={'white'}/>
+            </NavItem>
+            <NavItem name={'Users'} to={'/users'}>
+                <div className={s.users}>
+                    <IconUser fill={'white'}/>
+                    <IconUser fill={'white'}/>
+                    <IconUser fill={'white'}/>
+                </div>
+            </NavItem>
+            <NavItem name={'News'} to={'/news'}>
+                <IconNews fill={'white'}/>
+            </NavItem>
+            <NavItem name={'Music'} to={'/music'}>
+                <IconMusic fill={'white'}/>
+            </NavItem>
+            <NavItem name={'Settings'} to={'/settings'}>
+                <IconSettings fill={'white'}/>
+            </NavItem>
+        </div>
     );
 }
 
