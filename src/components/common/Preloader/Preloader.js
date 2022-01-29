@@ -8,3 +8,4 @@ let Preloader = (props) => {
 }
 
 export default Preloader;
+

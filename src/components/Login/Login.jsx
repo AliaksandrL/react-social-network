@@ -5,18 +5,13 @@ import {required} from "../../utils/validators/validators";
 import {connect} from "react-redux";
 import {login} from "../../redux/auth-reducer";
 import {Redirect} from "react-router-dom";
-// import s from "./../common/FormsControls/FormsControls.module.css";
 import s from "./Login.module.css";
 
 const LoginForm = ({handleSubmit, error, captchaUrl}) => {
     return (
-        <div className={s.wrapper}>
+        <div className={s.wrapper + ' themeBorder themeBorderPad'}>
             <h3>Please Log In</h3>
             <form onSubmit={handleSubmit} className={s.form}>
-                {/*{createField("Email", "email", [required], Input)}*/}
-                {/*{createField("Password", "password", [required], Input, {type: "password"})}*/}
-                {/*{createField(null, "rememberMe", [required], Input, {type: "checkbox"}, "remember me")}*/}
-
                 {captchaUrl && <img src={captchaUrl}/>}
                 {captchaUrl && createField("Symbols from image", "captcha", [required], Input, {})}
                 <p className={s.inputWrapper}>
@@ -25,7 +20,7 @@ const LoginForm = ({handleSubmit, error, captchaUrl}) => {
                     </div>
                 </p>
                 <div>
-                    <Field component={Input} validate={[required]} name={"password"} placeholder={"Password"} />
+                    <Field component={Input} validate={[required]} name={"password"} placeholder={"Password"}/>
                 </div>
                 <div className={s.checkboxText}>
                     <Field component={Input} validate={[required]} name={"rememberMe"} type={"checkbox"}/> remember me
