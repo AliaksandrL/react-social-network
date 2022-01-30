@@ -28,8 +28,8 @@ const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto, savePro
     }
 
     return (
-        <div>
-            <div className={s.descriptionBlock}>
+        <div className={'contentCenter'}>
+            <div className={`themeBorder themeBorderPad ${s.wrapper}`}>
                 <img src={profile.photos.large || userPhoto} className={s.mainPhoto}/>
                 {isOwner && <input type={"file"} onChange={onMainPhotoSelected}/>}
 
