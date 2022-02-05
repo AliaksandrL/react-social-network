@@ -1,5 +1,5 @@
-import {RootThunkType} from "./store-new";
-import {followAPI, usersAPI} from "../api/api-new";
+import {RootThunkType} from "./store";
+import {followAPI, usersAPI} from "../api/api";
 
 export type UsersPageTypes = {
     users: UserType[]

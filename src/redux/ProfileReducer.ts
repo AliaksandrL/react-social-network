@@ -1,5 +1,5 @@
-import {profileAPI} from "../apis/api";
-import {RootThunkType} from "./store-new";
+import {profileAPI} from "../api/api";
+import {RootThunkType} from "./store";
 
 export type ProfilePageTypes = {
     userId: number
