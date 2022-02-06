@@ -40,7 +40,7 @@ type RootStoreType = {
     dispatch: (action: any) => void
 }
 
-let store: RootStoreType = {
+let storeOld: RootStoreType = {
     _state: {
         profilePage: {
             posts: [
@@ -90,6 +90,6 @@ let store: RootStoreType = {
     }
 }
 
-export default store;
+export default storeOld;
 // @ts-ignore
-window.state = store;
+window.state = storeOld;
