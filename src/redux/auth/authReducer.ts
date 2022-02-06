@@ -7,7 +7,6 @@ import {ProfilePageTypes} from "../ProfileReducer";
 function authReducer(state: AuthInitialStateTypes = initialState, action: AuthRootActionsType): AuthInitialStateTypes {
     switch (action.type) {
         case authActions.SET_AUTH_USER_DATA:
-            debugger;
             return { ...state, ...action.payload, isAuth: true, isFetching: false, }
         case authActions.LOGIN:
             return { ...state, ...action.payload, isAuth: true, isFetching: false, }
@@ -26,7 +25,6 @@ function authReducer(state: AuthInitialStateTypes = initialState, action: AuthRo
 }
 
 export const setAuthUserData = (id: number, email: string, login: string): SetAuthUserDataType => {
-    debugger;
     return {type: authActions.SET_AUTH_USER_DATA, payload: {id, email, login}}
 }
 export const setLoginData = (id: number, email: string, login: string) => {

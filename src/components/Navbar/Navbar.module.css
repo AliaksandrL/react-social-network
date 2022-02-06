@@ -1,17 +1,3 @@
-/*.nav {*/
-/*  grid-area: n;*/
-/*  background-color: rgb(97, 228, 97);*/
-/*  padding: 20px;*/
-/*}*/
-
-/*.item a {*/
-/*  color: cornsilk;*/
-/*  text-decoration: none;*/
-/*}*/
-
-/*.item a.activeLink {*/
-/*  color: rgb(221, 177, 0);*/
-/*}*/
 .navbar {
   height: 100vh;
   left: 0;
