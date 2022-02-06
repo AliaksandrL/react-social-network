@@ -17,7 +17,7 @@ import {
 } from "../../redux/users-selectors";
 
 
-class UsersContainer extends React.Component {
+class UsersContainerOld extends React.Component {
     componentDidMount() {
         const {currentPage, pageSize} = this.props
         this.props.getUsers(currentPage, pageSize);
@@ -89,4 +89,4 @@ let mapStateToProps = (state) => {
 // }
 export default compose(
     connect(mapStateToProps, {follow, unfollow, setCurrentPage, toggleIsFollowingProgress, getUsers: requestUsers,})
-)(UsersContainer)
+)(UsersContainerOld)
