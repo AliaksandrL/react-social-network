@@ -3,10 +3,10 @@ import {UserType} from "../redux/UsersReducer";
 import {ProfilePageTypes} from "../redux/ProfileReducer";
 
 const instance = axios.create({
-    baseURL: process.env.REACT_APP_BASE_URL,
+    baseURL: `https://social-network.samuraijs.com/api/1.0/`,
     withCredentials: true,
     headers: {
-        'API-KEY': process.env.REACT_APP_API_KEY
+        'API-KEY': 'e2b857bb-4c54-4e72-81b4-dd1c708c4455'
     }
 })
 

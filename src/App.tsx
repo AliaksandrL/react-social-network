@@ -1,63 +1,33 @@
-import {Route, withRouter} from "react-router-dom";
-import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
-import News from "./components/News/News";
-// import DialogsContainer from "./components/Dialogs/DialogsContainer";
-// import ProfileContainer from "./components/Profile/ProfileContainer";
-import UsersContainer from "./components/Users/UsersContainer";
-import HeaderContainer from "./components/Header/HeaderContainer";
-import Login from "./components/Login/Login";
-import React, {Component} from "react";
-import {compose} from "redux";
-import {connect} from "react-redux";
-import {initializeApp} from "./redux/app-reducer";
-import Preloader from "./components/common/Preloader/Preloader";
-import {withSuspense} from "./hoc/withSuspense";
+import React, {useEffect} from 'react';
+import './App.css';
 
-const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
-const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
+import {Navbar} from "./components/Navbar/Navbar";
+import {Content} from "./components/Content";
+import {OnlineFriends} from "./components/OnlineFriends/OnlineFriends";
+import {useDispatch, useSelector} from "react-redux";
+import {AppStateTypes} from "./redux/store";
+import PreloaderStar from "../src/components/common/icons/Preloaders/PreloaderStar";
+import {getAuthUserData} from "./redux/auth/authReducer";
+import Header from "./components/Header/Header";
 
+function App() {
+    const isInitialized = useSelector<AppStateTypes, boolean>(state => state.auth.isInitialized)
+    const dispatch = useDispatch()
 
-class App extends Component<any> {
-    componentDidMount() {
-        this.props.initializeApp();
-    }
+    useEffect( () => {
+        dispatch(getAuthUserData())
+    }, [dispatch])
 
-    render() {
-        if (!this.props.initialized) {
-            return <Preloader/>
-        }
+    if (!isInitialized) return <PreloaderStar />
 
-        return (
-            <div className="App">
-                <HeaderContainer/>
-                <Navbar/>
-                <div className="app-wrapper-content">
-                    <Route
-                        path="/profile/:userId?"
-                        render={withSuspense(ProfileContainer)}/>
-                    <Route
-                        path="/dialogs"
-                        render={withSuspense(DialogsContainer)}/>
-                    <Route
-                        path="/news"
-                        render={() => <News/>}
-                    />
-                    <Route
-                        path="/users"
-                        render={() => <UsersContainer/>}
-                    />
-                    <Route
-                        path="/login"
-                        render={() => <Login/>}
-                    />
-                </div>
-            </div>
-        );
-    }
+    return (
+        <div className="App">
+            <Header/>
+            <Navbar/>
+            <Content />
+            <OnlineFriends />
+        </div>
+    );
 }
 
-const mapStateToProps = (state: any) => ({
-    initialized: state.app.initialized
-})
-export default compose(connect(mapStateToProps, {initializeApp}))(App);
+export default App;
