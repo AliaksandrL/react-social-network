@@ -18,8 +18,8 @@ export const Login = () => {
 
     const {register, handleSubmit, formState: {errors}} = useForm<IFormInput>({
         defaultValues: {
-            userName: process.env.REACT_APP_EMAIL,
-            password: process.env.REACT_APP_PASSWORD,
+            userName: 'lipskialiaksandr@gmail.com',
+            password: 'RCPRWWsPUp2rJT_',
             rememberMe: true,
         },
     });

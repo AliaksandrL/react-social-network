@@ -1,34 +1,39 @@
 {
+  "baseURL": "src",
   "name": "react-social-network",
-  "homepage": "https://AliaksandrL.github.io/react-social-network",
+  "engines": {
+    "node": ">=14.17.6",
+    "npm": "8.1.0",
+    "yarn": ">=1.22.10"
+  },
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://AliaksandrL.github.io/react-social-network",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "@types/jest": "^27.0.1",
-    "@types/node": "^16.7.1",
-    "@types/react": "^17.0.19",
-    "@types/react-dom": "^17.0.9",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/axios": "^0.14.0",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
     "@types/react-redux": "^7.1.18",
-    "@types/react-router-dom": "^5.1.8",
-    "@types/uuid": "^8.3.4",
-    "@typescript-eslint/parser": "^4.29.3",
-    "axios": "^0.21.4",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/uuid": "^8.3.1",
+    "axios": "^0.21.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-hook-form": "^7.26.0",
-    "react-redux": "^7.2.5",
+    "react-hook-form": "^7.15.4",
+    "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "redux": "^4.1.1",
-    "redux-form": "^8.3.8",
+    "redux": "^4.1.0",
     "redux-thunk": "^2.3.0",
-    "reselect": "^4.1.5",
-    "typescript": "^4.3.5",
+    "reselect": "^4.0.0",
+    "typescript": "^4.1.2",
     "uuid": "^8.3.2",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,6 +42,12 @@
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -51,9 +62,6 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-react": "^1.1.7",
-    "gh-pages": "^3.2.3",
-    "react-test-renderer": "^17.0.2",
-    "remotedev-extension": "^0.0.10"
+    "gh-pages": "^3.2.3"
   }
 }
